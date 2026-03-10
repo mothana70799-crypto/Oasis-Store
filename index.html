@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>سوق الواحة | متجر إلكتروني</title>
+  <meta name="description" content="متجر إلكتروني متكامل: منتجات، سلة، إتمام طلب، وتتبع الطلبات." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Changa:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="bg-orb orb-a"></div>
+  <div class="bg-orb orb-b"></div>
+
+  <header class="topbar container">
+    <div class="brand-wrap">
+      <div class="brand-mark">🛍</div>
+      <div>
+        <h1 class="brand">سوق الواحة</h1>
+        <p class="brand-sub">تجربة تسوق سريعة وآمنة</p>
+      </div>
+      <button id="navToggleBtn" class="nav-toggle" type="button" aria-label="فتح القائمة" aria-expanded="false">☰</button>
+    </div>
+
+    <nav id="topActions" class="top-actions">
+      <a href="#products" class="btn ghost">المنتجات</a>
+      <a href="#wishlist" class="btn ghost">المفضلة</a>
+      <a href="#orders" class="btn ghost">طلباتي</a>
+      <a href="./admin.html" class="btn ghost">لوحة الإدارة</a>
+      <div id="userArea"></div>
+      <button id="cartToggleBtn" class="btn cart-btn" type="button">
+        السلة
+        <span id="cartCount" class="cart-count">0</span>
+      </button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-card platform-intro">
+        <div class="intro-content">
+          <span class="hero-badge">منصة سوق الواحة</span>
+          <h3>منصة تسوق متكاملة بهوية عالمية</h3>
+          <p>نوفّر رحلة شراء احترافية من اكتشاف المنتجات، للمفضلة والمقارنة، حتى تتبع الطلبات بخطوات واضحة وسريعة.</p>
+          <div class="hero-actions">
+            <a href="#products" class="btn primary">ابدأ التصفح</a>
+            <a href="#recommended" class="btn ghost">المنتجات المقترحة</a>
+          </div>
+        </div>
+
+        <div class="intro-stack" aria-label="مؤشرات المنصة">
+          <article class="intro-tile main">
+            <strong>+1,200</strong>
+            <span>طلب مكتمل</span>
+          </article>
+          <article class="intro-tile sub a">
+            <strong>24/7</strong>
+            <span>خدمة مستمرة</span>
+          </article>
+          <article class="intro-tile sub b">
+            <strong>4.9/5</strong>
+            <span>تقييم العملاء</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="luxury-strip">
+      <article>
+        <strong>شحن سريع</strong>
+        <span>توصيل خلال 24-48 ساعة في المدن الرئيسية</span>
+      </article>
+      <article>
+        <strong>تغليف فاخر</strong>
+        <span>كل طلب يصل بهوية بصرية أنيقة ومرتبة</span>
+      </article>
+      <article>
+        <strong>دعم مميز</strong>
+        <span>خدمة عملاء سريعة قبل وبعد الشراء</span>
+      </article>
+    </section>
+
+    <section class="quick-pills" aria-label="مزايا المتجر">
+      <span>دفع آمن</span>
+      <span>استرجاع سهل</span>
+      <span>عروض يومية</span>
+      <span>منتجات أصلية</span>
+      <span>هدايا مع الطلبات المختارة</span>
+    </section>
+
+    <section class="spotlight-grid" aria-label="عروض مميزة">
+      <article class="spotlight-card spotlight-main">
+        <p>خصومات نهاية الأسبوع</p>
+        <h3>حتى 35% على مختارات المنزل</h3>
+        <a href="#products" class="btn ghost">استكشف العروض</a>
+      </article>
+      <article class="spotlight-card spotlight-alt">
+        <p>منتج الأسبوع</p>
+        <h3>منتجات عناية مختارة مع هدية مجانية</h3>
+        <a href="#products" class="btn ghost">عرض المنتجات</a>
+      </article>
+    </section>
+
+    <section id="products" class="panel">
+      <div class="panel-head">
+        <h3>المنتجات</h3>
+        <p>تصفية وبحث سريع للوصول للمنتج المطلوب.</p>
+        <div id="productsCountBadge" class="products-count-badge">0 منتج</div>
+      </div>
+
+      <div class="filters">
+        <input id="searchInput" type="search" placeholder="ابحث عن منتج..." />
+        <select id="categoryFilter" aria-label="فلترة حسب التصنيف"></select>
+        <select id="sortSelect" aria-label="ترتيب المنتجات">
+          <option value="featured">الأبرز</option>
+          <option value="priceAsc">السعر: الأقل أولًا</option>
+          <option value="priceDesc">السعر: الأعلى أولًا</option>
+          <option value="nameAsc">الاسم: أ-ي</option>
+        </select>
+      </div>
+
+      <div id="categoryChips" class="category-chips" aria-label="تصفية سريعة بالتصنيف"></div>
+
+      <div id="productGrid" class="product-grid"></div>
+    </section>
+
+    <section id="wishlist" class="panel">
+      <div class="panel-head">
+        <h3>المفضلة</h3>
+        <p>المنتجات التي حفظتها للشراء لاحقًا.</p>
+      </div>
+      <div id="wishlistGrid" class="product-grid"></div>
+    </section>
+
+    <section id="recommended" class="panel">
+      <div class="panel-head">
+        <h3>مقترح لك</h3>
+        <p>اختيارات ذكية بناءً على سلتك وتفضيلاتك.</p>
+      </div>
+      <div id="recommendedGrid" class="product-grid"></div>
+    </section>
+
+    <section id="orders" class="panel">
+      <div class="panel-head">
+        <h3>طلباتي</h3>
+        <p>آخر الطلبات التي تم تنفيذها من هذا الجهاز.</p>
+      </div>
+      <div id="ordersList" class="orders-list"></div>
+    </section>
+  </main>
+
+  <aside id="cartDrawer" class="cart-drawer" aria-hidden="true">
+    <div class="cart-head">
+      <h3>سلة التسوق</h3>
+      <button id="closeCartBtn" class="icon-btn" type="button" aria-label="إغلاق">✕</button>
+    </div>
+
+    <div id="cartItems" class="cart-items"></div>
+
+    <div class="cart-summary">
+      <div class="summary-row"><span>الإجمالي الفرعي</span><strong id="subtotalValue">0 ر.س</strong></div>
+      <div class="summary-row"><span>الشحن</span><strong id="shippingValue">0 ر.س</strong></div>
+      <div class="summary-row total"><span>الإجمالي النهائي</span><strong id="totalValue">0 ر.س</strong></div>
+    </div>
+
+    <form id="checkoutForm" class="checkout-form">
+      <h4>إتمام الطلب</h4>
+      <div class="field-row">
+        <input name="name" type="text" placeholder="الاسم الكامل" required />
+        <input name="phone" type="tel" placeholder="رقم الجوال" required />
+      </div>
+      <div class="field-row">
+        <input name="city" type="text" placeholder="المدينة" required />
+        <input name="address" type="text" placeholder="العنوان" required />
+      </div>
+      <button class="btn primary full" type="submit">تأكيد الطلب</button>
+    </form>
+  </aside>
+
+  <div id="cartBackdrop" class="cart-backdrop" aria-hidden="true"></div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <div id="productModal" class="product-modal" aria-hidden="true">
+    <article class="product-modal-card">
+      <button id="closeProductModalBtn" class="icon-btn" type="button" aria-label="إغلاق">✕</button>
+      <img id="productModalImage" src="" alt="" />
+      <div class="product-modal-content">
+        <div class="card-topline">
+          <span id="productModalCategory" class="badge"></span>
+          <span class="rating">★ 4.9</span>
+        </div>
+        <h3 id="productModalTitle"></h3>
+        <p id="productModalDescription" class="muted"></p>
+        <p id="productModalPrice" class="price"></p>
+      </div>
+    </article>
+  </div>
+
+  <section id="compareTray" class="compare-tray" aria-label="مقارنة المنتجات">
+    <div id="compareItems" class="compare-items"></div>
+    <button id="runCompareBtn" class="btn primary" type="button">مقارنة الآن</button>
+    <button id="clearCompareBtn" class="btn ghost" type="button">تفريغ</button>
+  </section>
+
+  <div id="compareModal" class="product-modal" aria-hidden="true">
+    <article class="product-modal-card compare-modal-card">
+      <button id="closeCompareModalBtn" class="icon-btn" type="button" aria-label="إغلاق">✕</button>
+      <div id="compareTable" class="compare-table"></div>
+    </article>
+  </div>
+
+  <div id="orderModal" class="product-modal" aria-hidden="true">
+    <article class="product-modal-card order-modal-card">
+      <button id="closeOrderModalBtn" class="icon-btn" type="button" aria-label="إغلاق">✕</button>
+      <div class="order-modal-content">
+        <div class="order-modal-head">
+          <h3 id="orderModalTitle">تفاصيل الطلب</h3>
+          <button id="copyOrderIdBtn" class="btn ghost" type="button">نسخ رقم الطلب</button>
+        </div>
+        <div id="orderModalMeta" class="compare-row"></div>
+        <div id="orderTimeline" class="order-timeline"></div>
+        <div id="orderItemsList" class="orders-list"></div>
+      </div>
+    </article>
+  </div>
+
+  <button id="backToTopBtn" class="back-to-top" type="button" aria-label="العودة للأعلى">↑</button>
+
+  <script type="module" src="./src/store.js"></script>
+</body>
+</html>

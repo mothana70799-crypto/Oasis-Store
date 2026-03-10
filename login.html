@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>الدخول والتسجيل | سوق الواحة</title>
+  <meta name="description" content="صفحة دخول وتسجيل مستخدمين لمتجر سوق الواحة" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Changa:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="login-body">
+  <div class="mesh"></div>
+  <div class="float-shape shape-1"></div>
+  <div class="float-shape shape-2"></div>
+  <div class="float-shape shape-3"></div>
+
+  <main class="login-shell container">
+    <section class="login-showcase">
+      <p class="kicker">SOUQ EXPERIENCE</p>
+      <h1>تجربة دخول فاخرة
+        <span>بلمسة تفاعلية</span>
+      </h1>
+      <p>سجل حسابك وابدأ تتبع الطلبات، حفظ العناوين، والحصول على عروض خاصة.</p>
+      <ul>
+        <li>واجهة ديناميكية مع تدرجات حية</li>
+        <li>تسجيل سريع وآمن</li>
+        <li>ربط مباشر مع نظام الطلبات</li>
+      </ul>
+      <a class="btn primary" href="./index.html">العودة للمتجر</a>
+    </section>
+
+    <section class="auth-card" id="authCard">
+      <div class="auth-tabs">
+        <button class="auth-tab active" data-tab="login" type="button">تسجيل دخول</button>
+        <button class="auth-tab" data-tab="register" type="button">إنشاء حساب</button>
+      </div>
+
+      <form id="loginForm" class="stack-form auth-form">
+        <h3>مرحبًا بعودتك</h3>
+        <input name="email" type="email" placeholder="البريد الإلكتروني" required />
+        <input name="password" type="password" placeholder="كلمة المرور" required />
+        <button class="btn primary" type="submit">دخول الآن</button>
+      </form>
+
+      <form id="registerForm" class="stack-form auth-form hidden">
+        <h3>ابدأ حسابك الجديد</h3>
+        <input name="name" type="text" placeholder="الاسم الكامل" required />
+        <input name="email" type="email" placeholder="البريد الإلكتروني" required />
+        <input name="password" type="password" minlength="6" placeholder="كلمة المرور (6 أحرف على الأقل)" required />
+        <button class="btn primary" type="submit">إنشاء الحساب</button>
+      </form>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script type="module" src="./src/login.js"></script>
+</body>
+</html>
